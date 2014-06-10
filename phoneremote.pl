@@ -53,6 +53,7 @@ sub xmlSend {
 
 
 sub xmlSendBack {
+	# Not used - can set the background but you need a web server
 		
 		my $userAgentPre = LWP::UserAgent->new(agent => 'THURBER-1.0');
 		$userAgentPre->get_basic_credentials('test', 'http://' . $_[0] . '/CGI/Execute', '1');
@@ -218,18 +219,7 @@ while ($i > 0) {
 			&xmlSend($ip,$user,$password,"Play:AreYouThere.raw");
 	} 
 
-	elsif ($input eq 'fail' | $input eq 'Fail') {
-		&xmlSend($ip,$user,$password,"http://172.17.101.40:8080/xml/fail.php");
-			&xmlSend($ip,$user,$password,"Play:fail.raw");
-	} 
-		
-	elsif ($input eq 'friday' | $input eq 'Friday') {
-			
-			$sendtexturl = "http://10.0.16.35/text.php?txt=its_friday_friday_gettin_down_on_friday_fun_fun_fun_fun_fun_fun_fun_fun..";
-			&xmlSend($ip,$user,$password,"$sendtexturl");
-			&xmlSend($ip,$user,$password,"Play:Friday.raw");
-	} 
-
+	
 	elsif ($input eq 'dial') {
 			print "Number:";
 			chomp($number = <STDIN>);  
@@ -262,23 +252,7 @@ while ($i > 0) {
 			&xmlSend($ip,$user,$password,$url);
 	}
 
-	elsif ($input eq 'fag') {
-			#AreYouThere.raw
-			&xmlSend($ip,$user,$password,"http://172.17.101.40:8080/xml/ponch.php");
-			&xmlSend($ip,$user,$password,"Play:AreYouThere.raw");
-	}
-
-	elsif ($input eq 'heman') {
-			#AreYouThere.raw
-			&xmlSend($ip,$user,$password,"http://10.0.16.35/heman/heman.php");
-			&xmlSend($ip,$user,$password,"Play:Heman.raw");
-	}
-
-	elsif ($input eq 'random') {
-			#AreYouThere.raw
-			&xmlSend($ip,$user,$password,"http://10.0.16.35/xml/random.php");
-	}
-
+	
 
 	elsif ($input eq 'up' | $input eq 'Up' | $input eq 'UP') {
 			&xmlSend($ip,$user,$password,"Key:NavUp");
