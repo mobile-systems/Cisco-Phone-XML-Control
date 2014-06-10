@@ -19,9 +19,6 @@ It's a command line tool, so you don't get to see the phone. But I have a low te
 
 Simply create a HTML document with the following code. It leverages the built in CGI/Screenshot function.
 
-<meta http-equiv="refresh" content="2"><Br><img src="http://1.1.1.1/CGI/Screenshot"></img><br><br>
-<a href="http://1.1.1.1/">Mgmt Interface</a>
-
 Settings for Cisco UCM (CallManager):
 Enable HTTP web management
 You'll need a user account (the same account you log into CCMUSER), and you need to associate the phone you want to control via that interface.
